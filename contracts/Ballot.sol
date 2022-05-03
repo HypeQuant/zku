@@ -24,7 +24,7 @@ contract Ballot {
 
     modifier voteEnded() {
         // condition to make sure time is within 5 minutes of current timestamp
-        require(startTime + 5 minutes <= block.timestamp, "Voting time has passed");
+        require(startTime + 5 minutes >= block.timestamp, "Voting time has passed");
         _;
     }
 
